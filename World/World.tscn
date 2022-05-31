@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Entities/Player.tscn" type="PackedScene" id=1]
+
+[node name="World" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 166.124, 191.941 )
+collision_mask = 0
+
+[node name="Player2" parent="." instance=ExtResource( 1 )]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 436.946, 196.184 )
+collision_mask = 0
