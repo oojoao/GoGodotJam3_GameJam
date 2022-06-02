@@ -20,8 +20,8 @@ func change_team(var align : bool) -> void:
 	
 func death() -> void:
 	queue_free()
-	print("Dead!")
-	get_tree().paused = true
+	if ally:
+		get_tree().paused = true
 
 func _ready():
 	if name != "Player":
@@ -29,8 +29,7 @@ func _ready():
 	stats.connect("no_health", self, "death") # warning-ignore:return_value_discarded
 
 func _physics_process(_delta):
-	if name == "Player":
-		velocity = move_and_slide(velocity)
+	velocity = move_and_slide(velocity)
 	
 	if velocity == Vector2.ZERO:
 		animPlayback.travel("Idle")

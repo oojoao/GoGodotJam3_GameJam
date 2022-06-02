@@ -10,7 +10,7 @@ func _ready() -> void:
 		state.unit = unit
 		state.state_machine = self
 	
-func change_state(var state : String) -> void:
+func transition_to(var state : String) -> void:
 	current_state.exit()
 	current_state = get_node(state)
 	current_state.enter()
